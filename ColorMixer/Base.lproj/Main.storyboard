@@ -76,19 +76,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7lZ-0U-GXx">
                                                 <rect key="frame" x="187" y="0.0" width="81.5" height="108"/>
                                                 <subviews>
-                                                    <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HYA-UX-WeX" userLabel="RedSlider">
+                                                    <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="HYA-UX-WeX" userLabel="RedSlider">
                                                         <rect key="frame" x="-2" y="0.0" width="85.5" height="33"/>
                                                         <connections>
                                                             <action selector="redSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="3RS-Ad-KUg"/>
                                                         </connections>
                                                     </slider>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RPP-r1-R9C" userLabel="GreenSlider">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="RPP-r1-R9C" userLabel="GreenSlider">
                                                         <rect key="frame" x="-2" y="40" width="85.5" height="31"/>
                                                         <connections>
                                                             <action selector="greenSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="18h-wx-r3N"/>
                                                         </connections>
                                                     </slider>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vtm-H7-PQM" userLabel="BlueSlider">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Vtm-H7-PQM" userLabel="BlueSlider">
                                                         <rect key="frame" x="-2" y="78" width="85.5" height="31"/>
                                                         <connections>
                                                             <action selector="blueSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="BBY-k1-Zzz"/>
@@ -120,7 +120,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="blueTextFieldAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="we2-CO-gxi"/>
+                                                            <action selector="blueTextFieldAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Yff-Af-7Z2"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -191,7 +191,7 @@
                         <outlet property="blue" destination="isZ-Bg-wve" id="f7k-Zt-uDW"/>
                         <outlet property="blueCounter" destination="V0B-WI-yak" id="aFf-vP-h9W"/>
                         <outlet property="blueSlider" destination="Vtm-H7-PQM" id="MVU-MN-Ir5"/>
-                        <outlet property="blueTextField" destination="eFW-ax-Pct" id="bMm-gK-Xa0"/>
+                        <outlet property="blueTextField" destination="eKP-ON-nm9" id="1QK-69-iI7"/>
                         <outlet property="colorView" destination="olX-B0-kEc" id="5pB-Em-SDZ"/>
                         <outlet property="green" destination="fqA-SZ-fVM" id="L54-fT-QFO"/>
                         <outlet property="greenCounter" destination="180-mD-lEN" id="whB-m0-y3t"/>
