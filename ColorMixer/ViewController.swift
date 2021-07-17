@@ -46,6 +46,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var blueTextField: UITextField!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         red.text = "Red"
@@ -56,10 +57,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         redCounter.text = "0"
         greenCounter.text = "0"
         
+        colorView.layer.cornerRadius = 20
+        
+                
       //  redCounter.text = String(redSlider.value)
         
         
      //   colorView.backgroundColor = UIColor.init(red: redFloat, green: greenFloat, blue: blueFloat, alpha: 0.5)
+        
+        
 
         //blueTextField.text = "Hey"
         
@@ -80,7 +86,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         
-      //  colorView.backgroundColor = UIColor.init(red: redFloat, green: greenFloat, blue: blueFloat, alpha: 0.5)
+        self.colorView.backgroundColor = UIColor.init(red: redFloat, green: greenFloat, blue: blueFloat, alpha: 1)
         
         
     }
@@ -94,7 +100,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         greenFloat = CGFloat(greenValue)
         
-        //colorView.backgroundColor = UIColor.init(red: redFloat, green: greenFloat, blue: blueFloat, alpha: 0.5)
+        
+        self.colorView.backgroundColor = UIColor.init(red: redFloat, green: greenFloat, blue: blueFloat, alpha: 1)
     }
     
     @IBAction func blueSliderAction(_ sender: UISlider) {
@@ -108,7 +115,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         blueFloat = CGFloat(blueValue)
         
-       // colorView.backgroundColor = UIColor.init(red: redFloat, green: greenFloat, blue: blueFloat, alpha: 0.5)
+        
+        self.colorView.backgroundColor = UIColor.init(red: redFloat, green: greenFloat, blue: blueFloat, alpha: 1)
         
     }
     
@@ -121,6 +129,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func blueTextFieldAction(_ sender: Any) {
     }
  
+    
+    func updateView() {
+         colorView.backgroundColor = UIColor.init(red: redFloat, green: greenFloat, blue: blueFloat, alpha: 0.5)
+
+    }
     
     
 }
