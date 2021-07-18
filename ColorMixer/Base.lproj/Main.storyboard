@@ -76,21 +76,24 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7lZ-0U-GXx">
                                                 <rect key="frame" x="187" y="0.0" width="81.5" height="108"/>
                                                 <subviews>
-                                                    <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="HYA-UX-WeX" userLabel="RedSlider">
+                                                    <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" restorationIdentifier="sliderOne" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="HYA-UX-WeX" userLabel="RedSlider">
                                                         <rect key="frame" x="-2" y="0.0" width="85.5" height="33"/>
                                                         <connections>
+                                                            <action selector="allSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="7oC-Lo-QJ0"/>
                                                             <action selector="redSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="3RS-Ad-KUg"/>
                                                         </connections>
                                                     </slider>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="RPP-r1-R9C" userLabel="GreenSlider">
+                                                    <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="sliderTwo" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="RPP-r1-R9C" userLabel="GreenSlider">
                                                         <rect key="frame" x="-2" y="40" width="85.5" height="31"/>
                                                         <connections>
+                                                            <action selector="allSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="cKz-6e-SQk"/>
                                                             <action selector="greenSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="18h-wx-r3N"/>
                                                         </connections>
                                                     </slider>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Vtm-H7-PQM" userLabel="BlueSlider">
+                                                    <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="sliderThree" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Vtm-H7-PQM" userLabel="BlueSlider">
                                                         <rect key="frame" x="-2" y="78" width="85.5" height="31"/>
                                                         <connections>
+                                                            <action selector="allSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="aNX-Ji-kyO"/>
                                                             <action selector="blueSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="BBY-k1-Zzz"/>
                                                         </connections>
                                                     </slider>
