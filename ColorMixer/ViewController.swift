@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-    
-    var redFloat: CGFloat = 0.0
-    var greenFloat: CGFloat = 0.0
-    var blueFloat: CGFloat = 0.0
+    var redFloat:Float = 0.0
+    var greenFloat:Float = 0.0
+    var blueFloat:Float = 0.0
+   
     
     
     
@@ -59,6 +59,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         colorView.layer.cornerRadius = 20
         
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(didTapDone))
+        toolBar.items = [flexibleSpace, doneButton]
+        toolBar.sizeToFit()
+        redTextField.inputAccessoryView = toolBar
+        greenTextField.inputAccessoryView = toolBar
+        blueTextField.inputAccessoryView = toolBar
+        
+        
+        
+        
+//       var redOne = redSlider.value
+//        var greenOne = greenSlider.value
+//        var blueOne = blueSlider.value
+        
+        
+        
+        
              //  update()
       //  redCounter.text = String(redSlider.value)
         
@@ -71,12 +91,46 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
 
-   
+    @objc private func didTapDone() {
+        redTextField.resignFirstResponder()
+        greenTextField.resignFirstResponder()
+        blueTextField.resignFirstResponder()
+        
+        blueCounter.text = blueTextField.text
+        redCounter.text = redTextField.text
+        greenCounter.text = greenTextField.text
+        
+        let a = redCounter.text
+        let b = blueCounter.text
+        let g = greenCounter.text
+        
+        
+        
+        var redFloat = Float(a!)
+        var greenFloat = Float(g!)
+        var blueFloat = Float(b!)
+        
+        colorView.backgroundColor = UIColor.init(red:CGFloat(redFloat!)/255, green:CGFloat(greenFloat!)/255, blue: CGFloat(blueFloat!)/255, alpha: 1)
+
+        
+        
+    }
     
     @IBAction func allSliders(_ sender: UISlider) {
+        
+        let redFloat = redSlider.value
+        let greenFloat = greenSlider.value
+        let blueFloat = blueSlider.value
 
-        self.colorView.backgroundColor = UIColor.init(red:CGFloat(redSlider.value)/255, green:CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
+//        colorView.backgroundColor = UIColor.init(red:CGFloat(redSlider.value)/255, green:CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
+        
+        colorView.backgroundColor = UIColor.init(red:CGFloat(redFloat)/255, green:CGFloat(greenFloat)/255, blue: CGFloat(blueFloat)/255, alpha: 1)
+        
+        redCounter.text = redTextField.text
+        greenCounter.text = greenTextField.text
+        blueCounter.text = blueTextField.text
 
+        
 
     }
     
@@ -89,6 +143,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         redCounter.text = String(redValue)
 
         redTextField.text = String(redValue)
+        
+        
 
        // redFloat = CGFloat(sender.value)
 
@@ -131,6 +187,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func redTextFieldAction(_ sender: Any) {
+       
     }
     
     @IBAction func greenTextFieldAction(_ sender: Any) {
