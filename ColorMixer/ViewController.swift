@@ -59,6 +59,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         colorView.layer.cornerRadius = 20
         
+        redSlider.value = 100
+        greenSlider.value = 100
+        blueSlider.value = 100
+        
         
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -106,17 +110,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         
-        var redFloat = Float(a!)
-        var greenFloat = Float(g!)
-        var blueFloat = Float(b!)
+        let redFloat = Float(a!)
+        let greenFloat = Float(g!)
+        let blueFloat = Float(b!)
         
         colorView.backgroundColor = UIColor.init(red:CGFloat(redFloat!)/255, green:CGFloat(greenFloat!)/255, blue: CGFloat(blueFloat!)/255, alpha: 1)
 
+        redSlider.value = redFloat!
+        greenSlider.value = greenFloat!
+        blueSlider.value = blueFloat!
+        
+        
         
         
     }
     
     @IBAction func allSliders(_ sender: UISlider) {
+        
+        
+        
         
         let redFloat = redSlider.value
         let greenFloat = greenSlider.value
@@ -125,6 +137,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        colorView.backgroundColor = UIColor.init(red:CGFloat(redSlider.value)/255, green:CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
         
         colorView.backgroundColor = UIColor.init(red:CGFloat(redFloat)/255, green:CGFloat(greenFloat)/255, blue: CGFloat(blueFloat)/255, alpha: 1)
+        
+        
         
         redCounter.text = redTextField.text
         greenCounter.text = greenTextField.text
