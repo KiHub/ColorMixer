@@ -25,6 +25,14 @@ class ColorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let mainVC = segue.destination as! ViewController
+        mainVC.colorFromColorVC = view.backgroundColor
+        
+    }
+    
+    
     @IBAction  func unwind(for Segue: UIStoryboardSegue) {
         
         let VC = Segue.source as! ViewController

@@ -76,10 +76,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         greenFloat = 100
         blueFloat = 100
         
-        colorView.backgroundColor = UIColor.init(red:CGFloat(redFloat)/255, green:CGFloat(greenFloat)/255, blue: CGFloat(blueFloat)/255, alpha: 1)
+//        colorView.backgroundColor = UIColor.init(red:CGFloat(redFloat)/255, green:CGFloat(greenFloat)/255, blue: CGFloat(blueFloat)/255, alpha: 1)
        
-        
-        
+        colorView.backgroundColor = colorFromColorVC
         
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
