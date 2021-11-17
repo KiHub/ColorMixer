@@ -42,13 +42,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var greenTextField: UITextField!
     
+    @IBOutlet weak var setButton: UIButton!
     
     @IBOutlet weak var blueTextField: UITextField!
+    
+    var currentColor:UIColor = .clear
+    var delegate: ColorDelegate?
+    var colorFromColorVC: UIColor!
+     
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setButton.layer.cornerRadius = 20
         red.text = "Red"
         green.text = "Green"
         blue.text = "Blue"
@@ -62,6 +71,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         redSlider.value = 100
         greenSlider.value = 100
         blueSlider.value = 100
+        
+        redFloat = 100
+        greenFloat = 100
+        blueFloat = 100
+        
+        colorView.backgroundColor = UIColor.init(red:CGFloat(redFloat)/255, green:CGFloat(greenFloat)/255, blue: CGFloat(blueFloat)/255, alpha: 1)
+       
+        
         
         
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
@@ -124,6 +141,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
     }
+    
+    
+    @IBAction func setButtonTapped(_ sender: UIButton) {
+        
+        
+        guard let currentColor = colorView.backgroundColor else {
+            return
+        }
+        print("This is ", currentColor)
+        
+        delegate?.setColor(currentColor)
+        
+    }
+    
     
     @IBAction func allSliders(_ sender: UISlider) {
         
@@ -218,7 +249,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
 }
-
 
 
 
